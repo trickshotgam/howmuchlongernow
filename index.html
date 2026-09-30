@@ -80,8 +80,8 @@ body {
     margin-top: 10px;
 }
 
-/* Posts button */
-#postsButton {
+/* Bottom links */
+#bottomLinks {
     position: absolute;
 
     left: 50%;
@@ -89,13 +89,18 @@ body {
 
     transform: translateX(-50%);
 
-    color: white;
-    text-decoration: none;
+    display: flex;
+    gap: 40px;
 
     font-size: 24px;
 }
 
-#postsButton:hover {
+#bottomLinks a {
+    color: white;
+    text-decoration: none;
+}
+
+#bottomLinks a:hover {
     text-decoration: underline;
 }
 </style>
@@ -117,10 +122,18 @@ body {
         <div id="countdown"></div>
     </div>
 
-    <!-- Link to posts page -->
-    <a id="postsButton" href="posts.html">
-        From Toby
-    </a>
+    <!-- Bottom links -->
+    <div id="bottomLinks">
+
+        <a href="posts.html">
+            From Toby
+        </a>
+
+        <a href="https://toby.fangamer.com/newsletters/summer26/" target="_blank" rel="noopener noreferrer">
+            Latest Newsletter
+        </a>
+
+    </div>
 
 </div>
 
@@ -215,8 +228,8 @@ function typeText() {
 /* Click handling */
 document.addEventListener("click", function(event) {
 
-    /* Don't trigger the dialogue when clicking the posts link */
-    if (event.target.closest("#postsButton")) {
+    /* Don't trigger the dialogue when clicking a bottom link */
+    if (event.target.closest("#bottomLinks")) {
         return;
     }
 
